@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ArticleParser.h"
 
-@interface ViewController : UIViewController {
+@interface HomePage : UIViewController<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     ArticleParser *articleParser;
+    UICollectionView *collectionView;
 }
 
 @end
