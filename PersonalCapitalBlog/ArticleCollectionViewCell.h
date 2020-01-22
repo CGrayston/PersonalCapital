@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)updateView;
 
-
+-(void)setUpCellWith:(NSString *)articleTitle cellImageURL:(NSString *)articleImageURL;
 
 @end
 

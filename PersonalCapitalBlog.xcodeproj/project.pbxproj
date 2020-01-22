@@ -17,6 +17,7 @@
 		0A24F83623D53DEC0001AC57 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F83523D53DEC0001AC57 /* Article.m */; };
 		0A24F83A23D53E370001AC57 /* ArticleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F83923D53E370001AC57 /* ArticleParser.m */; };
 		0A24F83D23D566F20001AC57 /* ArticleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F83C23D566F20001AC57 /* ArticleCollectionViewCell.m */; };
+		0AAEBEFC23D828BD0043792E /* HeaderArticleCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEBEFB23D828BD0043792E /* HeaderArticleCollectionReusableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		0A24F83923D53E370001AC57 /* ArticleParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleParser.m; sourceTree = "<group>"; };
 		0A24F83B23D566F20001AC57 /* ArticleCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleCollectionViewCell.h; sourceTree = "<group>"; };
 		0A24F83C23D566F20001AC57 /* ArticleCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleCollectionViewCell.m; sourceTree = "<group>"; };
+		0AAEBEFA23D828BD0043792E /* HeaderArticleCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderArticleCollectionReusableView.h; sourceTree = "<group>"; };
+		0AAEBEFB23D828BD0043792E /* HeaderArticleCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderArticleCollectionReusableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 				0A24F83923D53E370001AC57 /* ArticleParser.m */,
 				0A24F83B23D566F20001AC57 /* ArticleCollectionViewCell.h */,
 				0A24F83C23D566F20001AC57 /* ArticleCollectionViewCell.m */,
+				0AAEBEFA23D828BD0043792E /* HeaderArticleCollectionReusableView.h */,
+				0AAEBEFB23D828BD0043792E /* HeaderArticleCollectionReusableView.m */,
 			);
 			path = PersonalCapitalBlog;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				0A24F81C23D537DA0001AC57 /* AppDelegate.m in Sources */,
 				0A24F82D23D537DB0001AC57 /* main.m in Sources */,
 				0A24F81F23D537DA0001AC57 /* SceneDelegate.m in Sources */,
+				0AAEBEFC23D828BD0043792E /* HeaderArticleCollectionReusableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +265,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -311,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
