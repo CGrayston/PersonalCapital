@@ -18,6 +18,10 @@
     UINavigationItem *navItem;
     UIBarButtonItem *refreshButton;
     
+//    CGFloat width;
+//    CGFloat height;
+    
+    
 }
 //@property (nonatomic, strong) UIView *contentView;
 //@property (nonatomic, strong) UICollectionReusableView *articleHeaderView;

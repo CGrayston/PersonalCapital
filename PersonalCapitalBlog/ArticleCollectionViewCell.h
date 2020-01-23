@@ -14,15 +14,20 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ArticleCollectionViewCell : UICollectionViewCell {
     UIImageView *articleCellImageView;
     UILabel *articleCellTitleLabel;
+    UIView *view;
     
-    Article *article;
+    UIActivityIndicatorView *indicator;
+    
 }
+
+@property Article *cellArticle;
 
 -(void)setup;
 
 -(void)updateView;
 
--(void)setUpCellWith:(NSString *)articleTitle cellImageURL:(NSString *)articleImageURL;
+-(void)setUpCellWithArticle:(Article *)article;
+
 
 @end
 
