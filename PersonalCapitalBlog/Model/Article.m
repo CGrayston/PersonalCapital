@@ -9,9 +9,9 @@
 #import "Article.h"
 
 /*
-* Article object from information parsed
-* from Personal Capital RSS feed.
-*/
+ * Article object from information parsed
+ * from Personal Capital RSS feed.
+ */
 @implementation Article
 @synthesize item, title, pubDate, mediaContent, link, articleDescription;
 

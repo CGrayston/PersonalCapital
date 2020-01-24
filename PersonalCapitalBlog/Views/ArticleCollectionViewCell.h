@@ -12,9 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /*
-* A custom collectionView cell used to model
-* article from Personal Capital
-*/
+ * A custom collectionView cell used to model
+ * article from Personal Capital
+ */
 @interface ArticleCollectionViewCell : UICollectionViewCell {
     /* The article image */
     UIImageView *articleCellImageView;

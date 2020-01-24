@@ -49,7 +49,7 @@
         
     }
     currentNodeContent = nil;
-
+    
 }
 
 
@@ -66,11 +66,11 @@
 }
 
 /*
-* Loads XML from URL prameter
-*
-* @param urlString Personal Capital RSS url
-* @return id
-*/
+ * Loads XML from URL prameter
+ *
+ * @param urlString Personal Capital RSS url
+ * @return id
+ */
 - (id)loadXMLByURL:(NSString *)urlString {
     // Initilize articles
     articles = [[NSMutableArray alloc] init];

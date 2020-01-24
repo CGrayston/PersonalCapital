@@ -11,9 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /*
-* Article object from information parsed
-* from Personal Capital RSS feed.
-*/
+ * Article object from information parsed
+ * from Personal Capital RSS feed.
+ */
 @interface Article : NSObject
 
 /* The article properties to get from the PC RSS Feed */

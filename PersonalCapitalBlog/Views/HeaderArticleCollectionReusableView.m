@@ -9,9 +9,9 @@
 #import "HeaderArticleCollectionReusableView.h"
 
 /*
-* Custom view to reperesnt the first article parsed from Personal Capital's RSS Feed.
-* View is dispalyed in the header portion of the collection view.
-*/
+ * Custom view to reperesnt the first article parsed from Personal Capital's RSS Feed.
+ * View is dispalyed in the header portion of the collection view.
+ */
 @implementation HeaderArticleCollectionReusableView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -26,7 +26,7 @@
         // Set Up article image view
         articleImageView = [[UIImageView alloc] init];
         articleImageView.translatesAutoresizingMaskIntoConstraints = NO;
-            indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
+        indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
         
         [contentView addSubview:articleImageView];
         
@@ -47,7 +47,7 @@
         
         // Stack View
         UIStackView *stackView = [[UIStackView alloc] init];
-
+        
         stackView.axis = UILayoutConstraintAxisVertical;
         stackView.distribution = UIStackViewDistributionFillProportionally;
         stackView.alignment = UIStackViewAlignmentFill;
@@ -84,10 +84,10 @@
 }
 
 /*
-* Setter for the article object
-*
-* @param article A article to populate the cell
-*/
+ * Setter for the article object
+ *
+ * @param article A article to populate the cell
+ */
 - (void)setArticle:(Article *)article {
     // If cell was set to nil, return
     if (article == nil) return;
@@ -100,9 +100,9 @@
 }
 
 /*
-* Sets the image and title for the view using the
-* cell's set article object.
-*/
+ * Sets the image and title for the view using the
+ * cell's set article object.
+ */
 -(void)updateViews {
     // Submits a block for priority asynchronous execution
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

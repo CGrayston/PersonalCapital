@@ -12,9 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /*
-* Custom view to reperesnt the first article parsed from Personal Capital's RSS Feed.
-* View is dispalyed in the header portion of the collection view.
-*/
+ * Custom view to reperesnt the first article parsed from Personal Capital's RSS Feed.
+ * View is dispalyed in the header portion of the collection view.
+ */
 @interface HeaderArticleCollectionReusableView : UICollectionReusableView {
     /* The article image */
     UIImageView *articleImageView;

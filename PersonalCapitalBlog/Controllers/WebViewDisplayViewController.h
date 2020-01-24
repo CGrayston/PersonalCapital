@@ -13,9 +13,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /*
-* WebViewDisplayViewController displays the selected
-* article's web page using WKWebView.
-*/
+ * WebViewDisplayViewController displays the selected
+ * article's web page using WKWebView.
+ */
 @interface WebViewDisplayViewController : UIViewController<UIWebViewDelegate> {
     /* The WKWebView to display the web page */
     WKWebView *webView;

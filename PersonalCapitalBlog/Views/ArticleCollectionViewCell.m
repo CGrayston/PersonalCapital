@@ -9,9 +9,9 @@
 #import "ArticleCollectionViewCell.h"
 
 /*
-* A custom collectionView cell used to model
-* article from Personal Capital
-*/
+ * A custom collectionView cell used to model
+ * article from Personal Capital
+ */
 @implementation ArticleCollectionViewCell
 @synthesize cellArticle = _cellArticle;
 
@@ -27,7 +27,7 @@
         // Set up article image
         articleCellImageView = [[UIImageView alloc] init];
         [view addSubview:articleCellImageView];
-
+        
         // Set Up Indicator
         indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleMedium];
         
@@ -43,10 +43,10 @@
 }
 
 /*
-* Setter for the cell's article object
-*
-* @param cellArticle A article to populate the cell
-*/
+ * Setter for the cell's article object
+ *
+ * @param cellArticle A article to populate the cell
+ */
 - (void)setCellArticle:(Article *)cellArticle {
     // If cell was set to nil, return
     if (cellArticle == nil) return;
@@ -59,9 +59,9 @@
 }
 
 /*
-* Sets the image and title for the cell using the
-* cell's set article object.
-*/
+ * Sets the image and title for the cell using the
+ * cell's set article object.
+ */
 -(void)updateView {
     // set cells title label
     articleCellTitleLabel.text = self.cellArticle.title;
@@ -71,15 +71,15 @@
         // Initilize image url and  data
         NSURL *imageURL = [NSURL URLWithString:self.cellArticle.mediaContent];
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-
+        
         // Set cell image and remove indicator
         dispatch_sync(dispatch_get_main_queue(), ^{
             [self->indicator removeFromSuperview];
             self->articleCellImageView.image = [UIImage imageWithData:imageData];
-             // Set to put on main thread
+            // Set to put on main thread
             self->articleCellImageView.image = self->articleCellImageView.image;
-         });
-     });
+        });
+    });
 }
 
 - (void)layoutSubviews {
