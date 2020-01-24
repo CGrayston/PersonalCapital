@@ -10,18 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Article : NSObject {
-    
-    NSString *item;
-    NSString *title;
-    NSString *pubDate;
-    NSString *mediaContent;
-    NSString *link;
-}
+/*
+* Article object from information parsed
+* from Personal Capital RSS feed.
+*/
+@interface Article : NSObject
 
-// MARK: - Properties
+/* The article properties to get from the PC RSS Feed */
 @property(nonatomic, retain)NSString *item;
 @property(nonatomic, retain)NSString *title;
+@property(nonatomic, retain)NSString *articleDescription;
 @property(nonatomic, retain)NSString *pubDate;
 @property(nonatomic, retain)NSString *mediaContent;
 @property(nonatomic, retain)NSString *link;

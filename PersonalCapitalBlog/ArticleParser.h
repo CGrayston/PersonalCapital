@@ -11,16 +11,29 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/*
+* Parser to gather article information from Personal Capital RSS Feed.
+*/
 @interface ArticleParser : NSObject <NSXMLParserDelegate> {
+    /* The current node */
     NSString *currentNodeContent;
-    NSMutableArray *articles;
+    
+    /* Parser object */
     NSXMLParser *parser;
+    
+    /* Current article we are on */
     Article *currentArticle;
 }
 
-// MARK: - Properties
+/* Holds articles from RSS Feed */
 @property(readonly, retain) NSMutableArray *articles;
 
+/*
+* Loads XML from URL prameter
+*
+* @param urlString Personal Capital RSS url
+* @return id
+*/
 - (id)loadXMLByURL:(NSString *)urlString;
 
 @end
