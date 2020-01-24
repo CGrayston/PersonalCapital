@@ -26,7 +26,7 @@ space of the device screen.
     * Project was done in Objective-C;
 - No third party libraries were used.
 
-###### Would have done if given more time
+###### Would Have Done With More Time
 - I would have cached the data.
     * The user currently will read the RSS feed in full load up fro mscratch.  I could have cached the images and data the first time it loaded to improve future run time.
 - Improved everything
