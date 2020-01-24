@@ -8,201 +8,96 @@
 
 #import "ArticleCollectionViewCell.h"
 
+/*
+* A custom collectionView cell used to model
+* article from Personal Capital
+*/
 @implementation ArticleCollectionViewCell
+@synthesize cellArticle = _cellArticle;
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        //[self setup];
-        //[self updateView];
-        //self.cellArticle =
+        // Set Up View
         view = self.contentView;
-        view.backgroundColor = [UIColor redColor];
-        //view.translatesAutoresizingMaskIntoConstraints = false;
+        view.backgroundColor = [UIColor whiteColor];
+        view.layer.borderWidth = 1.0f;
+        view.layer.borderColor = [UIColor lightGrayColor].CGColor;
         
+        // Set up article image
         articleCellImageView = [[UIImageView alloc] init];
-        //articleCellImageView.translatesAutoresizingMaskIntoConstraints = false;
         [view addSubview:articleCellImageView];
+
+        // Set Up Indicator
+        indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleMedium];
         
-        //[[[articleCellImageView centerXAnchor ] constraintEqualToAnchor:view.centerXAnchor] isActive ] = true;
-        //[[[articleCellImageView centerXAnchor] constraintEqualToAnchor: [view centerXAnchor]] setActive:true];
-        
+        // Set Up article title label
+        articleCellTitleLabel = [[UILabel alloc] init];
+        articleCellTitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        articleCellTitleLabel.textColor = [UIColor darkTextColor];
+        [articleCellTitleLabel setNumberOfLines:2];
+        [articleCellTitleLabel setFont:[UIFont systemFontOfSize:12]];
+        [view addSubview:articleCellTitleLabel];
     }
     return self;
-    
-    
-    //[self.contentView addSubview:cellTitleLabel];
-//    [[self contentView] addSubview:cellTitleLabel];
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+/*
+* Setter for the cell's article object
+*
+* @param cellArticle A article to populate the cell
+*/
+- (void)setCellArticle:(Article *)cellArticle {
+    // If cell was set to nil, return
+    if (cellArticle == nil) return;
     
-
+    // Set cellArticle
+    _cellArticle = cellArticle;
+    
+    // Call update view
+    [self updateView];
 }
 
--(void)setup {
-//    self.backgroundColor = [UIColor purpleColor];
-//    articleCellTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
-//    articleCellImageView = [[UIImageView alloc] initWithFrame:CGRectInset(self.bounds, 5, 5)];
-//
-//    [self.contentView addSubview:articleCellImageView];
-//    [self.contentView addSubview:articleCellTitleLabel];
-    UIView *view = self.contentView;
-    view.backgroundColor = [UIColor redColor];
-    
-    // Set Up articleImageView
-    articleCellImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height * 0.8)];
-    //articleCellImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)];
-    [view addSubview:articleCellImageView];
-    //articleCellImageView.contentMode = UIViewContentModeScaleAspectFit;
-    //articleCellImageView.translatesAutoresizingMaskIntoConstraints = false;
-    
-    
-    
-    
-    // Constraints for articleImageView
-    NSLayoutConstraint *imageViewTopConstraint = [NSLayoutConstraint
-                                                  constraintWithItem:articleCellImageView
-                                                  attribute:NSLayoutAttributeTopMargin
-                                                  relatedBy:NSLayoutRelationEqual
-                                                  toItem:view
-                                                  attribute:NSLayoutAttributeTopMargin
-                                                  multiplier:1.0
-                                                  constant:0];
-    
-//    NSLayoutConstraint *imageViewLeadingConstraint = [NSLayoutConstraint
-//                                                  constraintWithItem:articleCellImageView
-//                                                  attribute:NSLayoutAttributeLeading
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                  toItem:view
-//                                                  attribute:NSLayoutAttributeLeading
-//                                                  multiplier:1.0
-//                                                  constant:0];
-    
-    NSLayoutConstraint *imageViewCenterXConstraint = [NSLayoutConstraint
-                                                  constraintWithItem:articleCellImageView
-                                                  attribute:NSLayoutAttributeCenterX
-                                                  relatedBy:NSLayoutRelationEqual
-                                                  toItem:view
-                                                  attribute:NSLayoutAttributeCenterX
-                                                  multiplier:1.0
-                                                  constant:0];
-    
-    NSLayoutConstraint *imageViewCenterYConstraint = [NSLayoutConstraint
-                                                  constraintWithItem:articleCellImageView
-                                                  attribute:NSLayoutAttributeCenterY
-                                                  relatedBy:NSLayoutRelationEqual
-                                                  toItem:view
-                                                  attribute:NSLayoutAttributeCenterY
-                                                  multiplier:1.0
-                                                  constant:0];
-    
-    NSLayoutConstraint *imageViewWidthConstraint = [NSLayoutConstraint
-                                                    constraintWithItem:articleCellImageView
-                                                    attribute:NSLayoutAttributeWidth
-                                                    relatedBy:NSLayoutRelationEqual
-                                                    toItem:view
-                                                    attribute:NSLayoutAttributeWidth
-                                                    multiplier:0.6
-                                                    constant:0];
-    
-    NSLayoutConstraint *imageViewAspectRatioConstraint = [NSLayoutConstraint
-                                                    constraintWithItem:articleCellImageView
-                                                    attribute:NSLayoutAttributeWidth
-                                                    relatedBy:NSLayoutRelationEqual
-                                                    toItem:articleCellImageView
-                                                    attribute:NSLayoutAttributeHeight
-                                                    multiplier:2.0
-                                                    constant:0];
-    
-    //[view addConstraints:@[imageViewTopConstraint,imageViewWidthConstraint, imageViewCenterXConstraint, ]];
-    //[NSLayoutConstraint activateConstraints:@[imageViewTopConstraint]];
-    
-    //[articleCellImageView addConstraint:imageViewAspectRatioConstraint];
-    
-    
-    
-    
-    
-    articleCellTitleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    
-    
-    [view addSubview:articleCellTitleLabel];
-    
-}
-
-
-
+/*
+* Sets the image and title for the cell using the
+* cell's set article object.
+*/
 -(void)updateView {
-    //[articleCellTitleLabel setText:@"Hello"];
-    //[articleCellTitleLabel setTextColor:[UIColor blackColor]];
-    //self.backgroundColor = [UIColor orangeColor];
+    // set cells title label
+    articleCellTitleLabel.text = self.cellArticle.title;
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-     ^{
-        NSURL *imageURL = [NSURL URLWithString:@"https://www.personalcapital.com/blog/wp-content/uploads/2019/05/401k-rollover-2.jpg"];
+    // Submits a block for priority asynchronous execution
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // Initilize image url and  data
+        NSURL *imageURL = [NSURL URLWithString:self.cellArticle.mediaContent];
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
 
-        //This is your completion handler
+        // Set cell image and remove indicator
         dispatch_sync(dispatch_get_main_queue(), ^{
-             //If self.image is atomic (not declared with nonatomic)
-             // you could have set it directly above
+            [self->indicator removeFromSuperview];
             self->articleCellImageView.image = [UIImage imageWithData:imageData];
-
-             //This needs to be set here now that the image is downloaded
-             // and you are back on the main thread
-            self->articleCellImageView.image = articleCellImageView.image;
-
-         });
-     });
-}
-
--(void)setUpCellWithArticle:(Article *)article {
-    //[articleCellTitleLabel setText:articleTitle];
-    //[articleCellTitleLabel setTextColor:[UIColor blackColor]];
-    //self.backgroundColor = [UIColor orangeColor];
-    self.cellArticle = article;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-     ^{
-        NSURL *imageURL = [NSURL URLWithString:article.mediaContent];
-        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-
-        //This is your completion handler
-        dispatch_sync(dispatch_get_main_queue(), ^{
-             //If self.image is atomic (not declared with nonatomic)
-             // you could have set it directly above
-            self->articleCellImageView.image = [UIImage imageWithData:imageData];
-            [indicator removeFromSuperview];
-             //This needs to be set here now that the image is downloaded
-             // and you are back on the main thread
-            self->articleCellImageView.image = articleCellImageView.image;
-
+             // Set to put on main thread
+            self->articleCellImageView.image = self->articleCellImageView.image;
          });
      });
 }
 
 - (void)layoutSubviews {
-    
-    
-    // Set Up articleImageView
-    //articleCellImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height * 0.8)];
-    
+    [super layoutSubviews];
+    // Set up articleImageView
     articleCellImageView.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height * 0.8);
     
+    // Set up indicator
     indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleMedium];
     [indicator startAnimating];
     [indicator setCenter:articleCellImageView.center];
     [view addSubview:indicator];
-    //articleCellImageView.contentMode = UIViewContentModeScaleAspectFit;
-    //articleCellImageView.translatesAutoresizingMaskIntoConstraints = false;
     
+    // Set title label constraints
+    [articleCellTitleLabel.topAnchor constraintEqualToAnchor:articleCellImageView.bottomAnchor constant:0].active = true;
+    [articleCellTitleLabel.bottomAnchor constraintEqualToAnchor:view.bottomAnchor constant:0].active = true;
+    [articleCellTitleLabel.centerXAnchor constraintEqualToAnchor:view.centerXAnchor].active = true;
+    [articleCellTitleLabel.widthAnchor constraintEqualToAnchor:view.widthAnchor multiplier:0.95].active = true;
 }
-
-
-
-
 
 @end

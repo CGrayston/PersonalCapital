@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A24F81C23D537DA0001AC57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F81B23D537DA0001AC57 /* AppDelegate.m */; };
 		0A24F81F23D537DA0001AC57 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F81E23D537DA0001AC57 /* SceneDelegate.m */; };
-		0A24F82223D537DA0001AC57 /* HomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F82123D537DA0001AC57 /* HomePage.m */; };
+		0A24F82223D537DA0001AC57 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F82123D537DA0001AC57 /* HomePageViewController.m */; };
 		0A24F82523D537DA0001AC57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A24F82323D537DA0001AC57 /* Main.storyboard */; };
 		0A24F82723D537DB0001AC57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A24F82623D537DB0001AC57 /* Assets.xcassets */; };
 		0A24F82A23D537DB0001AC57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A24F82823D537DB0001AC57 /* LaunchScreen.storyboard */; };
@@ -18,6 +18,7 @@
 		0A24F83A23D53E370001AC57 /* ArticleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F83923D53E370001AC57 /* ArticleParser.m */; };
 		0A24F83D23D566F20001AC57 /* ArticleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F83C23D566F20001AC57 /* ArticleCollectionViewCell.m */; };
 		0AAEBEFC23D828BD0043792E /* HeaderArticleCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEBEFB23D828BD0043792E /* HeaderArticleCollectionReusableView.m */; };
+		0AAEBF0023DA4A1D0043792E /* WebViewDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEBEFF23DA4A1D0043792E /* WebViewDisplayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +27,8 @@
 		0A24F81B23D537DA0001AC57 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0A24F81D23D537DA0001AC57 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		0A24F81E23D537DA0001AC57 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		0A24F82023D537DA0001AC57 /* HomePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePage.h; sourceTree = "<group>"; };
-		0A24F82123D537DA0001AC57 /* HomePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePage.m; sourceTree = "<group>"; };
+		0A24F82023D537DA0001AC57 /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		0A24F82123D537DA0001AC57 /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		0A24F82423D537DA0001AC57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A24F82623D537DB0001AC57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A24F82923D537DB0001AC57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +42,8 @@
 		0A24F83C23D566F20001AC57 /* ArticleCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleCollectionViewCell.m; sourceTree = "<group>"; };
 		0AAEBEFA23D828BD0043792E /* HeaderArticleCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderArticleCollectionReusableView.h; sourceTree = "<group>"; };
 		0AAEBEFB23D828BD0043792E /* HeaderArticleCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderArticleCollectionReusableView.m; sourceTree = "<group>"; };
+		0AAEBEFE23DA4A1D0043792E /* WebViewDisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewDisplayViewController.h; sourceTree = "<group>"; };
+		0AAEBEFF23DA4A1D0043792E /* WebViewDisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewDisplayViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				0A24F83323D53DA30001AC57 /* Resources */,
-				0A24F82023D537DA0001AC57 /* HomePage.h */,
-				0A24F82123D537DA0001AC57 /* HomePage.m */,
+				0AAEBEFD23DA48680043792E /* View Controllers */,
 				0A24F83723D53DFA0001AC57 /* Model */,
 				0A24F83823D53E370001AC57 /* ArticleParser.h */,
 				0A24F83923D53E370001AC57 /* ArticleParser.m */,
@@ -110,6 +112,17 @@
 				0A24F83523D53DEC0001AC57 /* Article.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0AAEBEFD23DA48680043792E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A24F82023D537DA0001AC57 /* HomePageViewController.h */,
+				0A24F82123D537DA0001AC57 /* HomePageViewController.m */,
+				0AAEBEFE23DA4A1D0043792E /* WebViewDisplayViewController.h */,
+				0AAEBEFF23DA4A1D0043792E /* WebViewDisplayViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +198,8 @@
 				0A24F83623D53DEC0001AC57 /* Article.m in Sources */,
 				0A24F83D23D566F20001AC57 /* ArticleCollectionViewCell.m in Sources */,
 				0A24F83A23D53E370001AC57 /* ArticleParser.m in Sources */,
-				0A24F82223D537DA0001AC57 /* HomePage.m in Sources */,
+				0AAEBF0023DA4A1D0043792E /* WebViewDisplayViewController.m in Sources */,
+				0A24F82223D537DA0001AC57 /* HomePageViewController.m in Sources */,
 				0A24F81C23D537DA0001AC57 /* AppDelegate.m in Sources */,
 				0A24F82D23D537DB0001AC57 /* main.m in Sources */,
 				0A24F81F23D537DA0001AC57 /* SceneDelegate.m in Sources */,
@@ -332,6 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2P8CC25627;
 				INFOPLIST_FILE = PersonalCapitalBlog/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,6 +364,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2P8CC25627;
 				INFOPLIST_FILE = PersonalCapitalBlog/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

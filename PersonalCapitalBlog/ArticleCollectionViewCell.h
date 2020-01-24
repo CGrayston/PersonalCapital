@@ -11,23 +11,27 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/*
+* A custom collectionView cell used to model
+* article from Personal Capital
+*/
 @interface ArticleCollectionViewCell : UICollectionViewCell {
+    /* The article image */
     UIImageView *articleCellImageView;
+    
+    /* The article title */
     UILabel *articleCellTitleLabel;
+    
+    /* The view holding content view */
     UIView *view;
     
+    /* The activity indicator when images are loading */
     UIActivityIndicatorView *indicator;
     
 }
 
-@property Article *cellArticle;
-
--(void)setup;
-
--(void)updateView;
-
--(void)setUpCellWithArticle:(Article *)article;
-
+/* Article object to represent the cell */
+@property (nonatomic, strong) Article *cellArticle;
 
 @end
 
