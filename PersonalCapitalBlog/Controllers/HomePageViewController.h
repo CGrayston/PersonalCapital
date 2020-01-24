@@ -14,10 +14,10 @@
 #import "HeaderArticleCollectionReusableView.h"
 
 /*
-* HomePageViewController displays articles parsed from the Personal Capital RSS Feed.
-* Tapping an article will render the article’s link in an embedded webview on another
-* screen with the title of the article displayed in the navigation bar.
-*/
+ * HomePageViewController displays articles parsed from the Personal Capital RSS Feed.
+ * Tapping an article will render the article’s link in an embedded webview on another
+ * screen with the title of the article displayed in the navigation bar.
+ */
 @interface HomePageViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     /* The object to read and hold articles from PC RSS Feed*/
     ArticleParser *articleParser;
@@ -34,7 +34,7 @@
     /* Holds first article from PC RSS Feed */
     Article *firstArticle;
     
-    /* */
+    /* Collumns depending on iPhone or iPad */
     CGFloat collumns;
 }
 

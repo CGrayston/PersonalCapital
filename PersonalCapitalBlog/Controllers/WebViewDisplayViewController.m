@@ -14,9 +14,9 @@
 @end
 
 /*
-* WebViewDisplayViewController displays the selected
-* article's web page using WKWebView.
-*/
+ * WebViewDisplayViewController displays the selected
+ * article's web page using WKWebView.
+ */
 @implementation WebViewDisplayViewController
 @synthesize article = _article;
 
@@ -85,10 +85,10 @@
 }
 
 /*
-* Dismisses presenting view controller when back button is tapped
-*
-* @param item
-*/
+ * Dismisses presenting view controller when back button is tapped
+ *
+ * @param item
+ */
 -(void)backButtonTapped:(UIBarButtonItem*)item {
     // Dismiss presenting view controller
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];

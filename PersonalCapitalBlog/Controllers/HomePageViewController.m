@@ -73,7 +73,7 @@
     
     // Set navBar frame
     navBar.frame = CGRectMake(safeArea.layoutFrame.origin.x, safeAreaTopY, safeArea.layoutFrame.size.width, 44);
-
+    
     // Set collectionView constraints
     [collectionView.leadingAnchor constraintEqualToAnchor:safeArea.leadingAnchor].active = true;
     [collectionView.trailingAnchor constraintEqualToAnchor:safeArea.trailingAnchor].active = true;
@@ -88,7 +88,7 @@
     // Initilize WebViewDisplayViewController
     WebViewDisplayViewController *webViewVC = [[WebViewDisplayViewController alloc] init];
     webViewVC.modalPresentationStyle = UIModalPresentationFullScreen;
-
+    
     // Present WebViewDisplayViewController
     [self presentViewController:webViewVC animated:YES completion:nil];
     
@@ -134,16 +134,8 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     // Create width and height to set cells in collectionView to
     CGFloat width = (self.view.safeAreaLayoutGuide.layoutFrame.size.width - ((collumns * 10) + 1))/collumns;;
-    CGFloat height;
+    CGFloat height = width * 0.75;;
     
-    if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
-         // code for Portrait orientation
-        //width = (self.view.safeAreaLayoutGuide.layoutFrame.size.width - ((collumns * 10) + 1))/2;
-        height = width * 0.75;
-    } else {
-        //width = (self.view.safeAreaLayoutGuide.layoutFrame.size.width - 21)/2;
-        height = width * 0.75;
-    }
     // Return custom cell size
     return CGSizeMake(width, height);
 }
@@ -156,27 +148,19 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     // Create width and height to set cells in collectionView to
     CGFloat width = self.view.safeAreaLayoutGuide.layoutFrame.size.width;
-    CGFloat height;
+    CGFloat height = width * 0.6;
     
-    if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
-         // code for Portrait orientation
-        //width = (self.view.safeAreaLayoutGuide.layoutFrame.size.width - 21)/2;
-        height = width * 0.6;
-    } else {
-        //width = (self.view.safeAreaLayoutGuide.layoutFrame.size.width - 21)/2;
-        height = self.view.frame.size.height * 0.7;
+    // Prevent height from being greater than screen height
+    if (height > self.view.frame.size.height * 0.8) {
+        height = self.view.frame.size.height * 0.65;
     }
-    
-    
-    // Create custom header size
-    
-    return CGSizeMake(self.view.frame.size.width, height);;
+    return CGSizeMake(width, height);
 }
 
 /*
-* Will parse Personal Capital RSS feed and set the article array
-* source of truth and firstArticle for the custom header.
-*/
+ * Will parse Personal Capital RSS feed and set the article array
+ * source of truth and firstArticle for the custom header.
+ */
 -(void)parseRSS {
     // Parse Personal Capital RSS Feed and set source of truth
     articleParser = [[ArticleParser alloc] loadXMLByURL:@"https://www.personalcapital.com/blog/feed/"];
@@ -187,11 +171,11 @@
 }
 
 /*
-* When the refresh barButtonItem is tapped we parse the
-* Personal Capital RSS Feed and refreshes the collectionView.
-*
-* @param item
-*/
+ * When the refresh barButtonItem is tapped we parse the
+ * Personal Capital RSS Feed and refreshes the collectionView.
+ *
+ * @param item
+ */
 -(void)refreshButtonTapped:(UIBarButtonItem*)item {
     // Querry RSS Feed
     [self parseRSS];
@@ -201,11 +185,11 @@
 }
 
 /*
-* When the header view is tapped querry the
-* Personal Capital RSS Feed and refreshes the collectionView.
-*
-* @param item
-*/
+ * When the header view is tapped querry the
+ * Personal Capital RSS Feed and refreshes the collectionView.
+ *
+ * @param item
+ */
 -(void)headerTapped:(HeaderArticleCollectionReusableView*)headerView {
     // Initilize WebViewDisplayViewController
     WebViewDisplayViewController *webViewVC = [[WebViewDisplayViewController alloc] init];

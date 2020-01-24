@@ -76,15 +76,10 @@
 		0A24F81923D537DA0001AC57 /* PersonalCapitalBlog */ = {
 			isa = PBXGroup;
 			children = (
-				0A24F83323D53DA30001AC57 /* Resources */,
-				0AAEBEFD23DA48680043792E /* View Controllers */,
 				0A24F83723D53DFA0001AC57 /* Model */,
-				0A24F83823D53E370001AC57 /* ArticleParser.h */,
-				0A24F83923D53E370001AC57 /* ArticleParser.m */,
-				0A24F83B23D566F20001AC57 /* ArticleCollectionViewCell.h */,
-				0A24F83C23D566F20001AC57 /* ArticleCollectionViewCell.m */,
-				0AAEBEFA23D828BD0043792E /* HeaderArticleCollectionReusableView.h */,
-				0AAEBEFB23D828BD0043792E /* HeaderArticleCollectionReusableView.m */,
+				0AAEBF0423DB0E980043792E /* Views */,
+				0AAEBEFD23DA48680043792E /* Controllers */,
+				0A24F83323D53DA30001AC57 /* Resources */,
 			);
 			path = PersonalCapitalBlog;
 			sourceTree = "<group>";
@@ -114,15 +109,28 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		0AAEBEFD23DA48680043792E /* View Controllers */ = {
+		0AAEBEFD23DA48680043792E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				0A24F82023D537DA0001AC57 /* HomePageViewController.h */,
 				0A24F82123D537DA0001AC57 /* HomePageViewController.m */,
 				0AAEBEFE23DA4A1D0043792E /* WebViewDisplayViewController.h */,
 				0AAEBEFF23DA4A1D0043792E /* WebViewDisplayViewController.m */,
+				0A24F83823D53E370001AC57 /* ArticleParser.h */,
+				0A24F83923D53E370001AC57 /* ArticleParser.m */,
 			);
-			path = "View Controllers";
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0AAEBF0423DB0E980043792E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A24F83B23D566F20001AC57 /* ArticleCollectionViewCell.h */,
+				0A24F83C23D566F20001AC57 /* ArticleCollectionViewCell.m */,
+				0AAEBEFA23D828BD0043792E /* HeaderArticleCollectionReusableView.h */,
+				0AAEBEFB23D828BD0043792E /* HeaderArticleCollectionReusableView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
